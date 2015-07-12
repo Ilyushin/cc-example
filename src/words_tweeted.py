@@ -15,6 +15,9 @@ def calculate_words(data,path_ft1):
     #We can print as shown below, but this way degrades performance 
     #and makes bigger the file of result. 
     #It is important when we analyse a lot of tweets.
+    #word1   3
+    #word2   1
+    #word3   3
     if len(dict_words) > 0:
         file_ft1 = open(path_ft1, 'w')
         file_ft1.truncate(0) 
