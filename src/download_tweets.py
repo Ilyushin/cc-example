@@ -3,7 +3,7 @@ import twitter,os,sys,urllib3
 urllib3.disable_warnings()
 
 if len(sys.argv) == 2:
-#     path_tweets = os.path.abspath(sys.argv[1])
+    path_tweets = os.path.abspath(sys.argv[1])
     
     api = twitter.Api(consumer_key='A5jpPSXAZobgq4tzrS24eGnBO',
                           consumer_secret='ihFt9YajphCHWzMd8osvds8l1sbihpbix8Um9aSCq6iEAspCJr',
@@ -21,8 +21,6 @@ if len(sys.argv) == 2:
     #save the id of the oldest tweet less one
     oldest = alltweets[-1].id - 1
     
-    path_tweets = '/Users/Evgeniy/git/cc-example/tweet_input/tweets.txt'
-        
     #keep grabbing tweets until there are no tweets left to grab
     while len(new_tweets) > 0:
                 
@@ -38,7 +36,7 @@ if len(sys.argv) == 2:
     if os.path.exists(path_tweets):
         file_tweets = open (path_tweets, "w")
         for tweet in alltweets:           
-            file_tweets.write(str(tweet.text.encode('ascii', 'ignore')))
+            file_tweets.write(str(tweet.text.encode('ascii', 'ignore'))+"\n")
     
         file_tweets.close()
             
